@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Fruitables - Vegetable Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            
+        /* Positioning the count number inside the cart icon */
+.cart-count {
+    position: absolute;
+    top: -15px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    font-size: 13px;
+    padding: 0px 6px;
+}
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+     <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white text-dark sticky-top" >
+    <div class="container-fluid " style="background-color: #ffff;">
+      <a class="navbar-brand" href="#">
+        <!-- <img src="your-logo.png" alt="Your Brand Logo" height="50"> -->
+        <h4 style=" margin-right: 90px; margin-top: 5px;" class=" " >Wellcare Valley</h4>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Store
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="shop.html">All Products</a></li>
+              <li><a class="dropdown-item" href="#">Categories</a></li>
+              <li><a class="dropdown-item" href="#">Brands</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            
+          </li>
+        </ul>
+        <form class="d-flex pb-3 mt-3">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <a class="nav-link d-flex align-items-center ms-3 text-greeno d-none d-md-block" href="viewcart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span  class="badge text-greeno rounded-pill cartItemCount" >0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+      <!-- Navbar End -->
+  
+
+        <!-- Single Page Header start -->
+        <div class="container-fluid page-header-aboutus py-5">
+          <h1 class="text-center text-white display-6">About Us</h1>
+          
+      </div>
+        <!-- Single Page Header End -->
+
+
+        <!-- Contact Start -->
+        <main>
+          <div class="container">
+              <!-- About Us Section -->
+              <section class="about-section">
+                  <div class="row align-items-center">
+                      <div class="col-lg-6 about-content">
+                          <h2>About Us</h2>
+                          <p>Welcome to Wellcare Valley! We are a trusted pharmacy committed to providing high-quality healthcare products and services to our customers. With a focus on wellness and customer satisfaction, we strive to meet all your healthcare needs.</p>
+                          <p>Our team of experienced pharmacists and healthcare professionals is dedicated to ensuring you receive personalized care and expert advice. Whether you need prescription medications, over-the-counter products, or health supplements, we're here to help you live a healthier life.</p>
+                      </div>
+                      <div class="col-lg-6 about-image">
+                          <!-- Placeholder image goes here -->
+                          <img src="img/misionv.png" alt="About Us Image" class="img-fluid">
+                      </div>
+                  </div>
+              </section>
+      
+<!-- Mission, Vision, Values Section -->
+<section class="row mission-vision-values">
+  <!-- Mission -->
+  <div class="col-lg-4">
+      <h3>Mission</h3>
+      <p>Our mission is to provide accessible and affordable healthcare solutions to our community, ensuring the well-being and satisfaction of our customers.</p>
+  </div>
+  <!-- Vision -->
+  <div class="col-lg-4">
+      <h3>Vision</h3>
+      <p>Our vision is to be the leading provider of pharmaceutical and wellness products, recognized for our commitment to quality, innovation, and customer care.</p>
+  </div>
+  <!-- Values -->
+  <div class="col-lg-4">
+      <h3>Values</h3>
+      <ul>
+          <li>Commitment to Excellence</li>
+          <li>Integrity and Transparency</li>
+          <li>Customer-Centric Approach</li>
+          <li>Innovation and Continuous Improvement</li>
+          <li>Community Engagement and Responsibility</li>
+      </ul>
+  </div>
+</section>
+
+          </div>
+      </main>
+      
+        <!-- Contact End -->
+
+            <!-- Tastimonial Start -->
+    <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+            <div class="testimonial-header text-center">
+                <h4 class="text-primary">Our Testimonial</h4>
+                <h1 class="display-5 mb-5 text-dark">Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">I've been using WellCare Valley's services for a while now, and I must say, I'm impressed with their prompt delivery and quality products. They've made it so convenient for me to get my medications without any hassle.</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Tawheed Ad</h4>
+                                <p class="m-0 pb-3">Software Engineer</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">I can't thank WellCare Valley enough for their exceptional service. As a busy professional, having my medications delivered to my doorstep has been a lifesaver. Plus, their customer support is top-notch!</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Prince Dar</h4>
+                                <p class="m-0 pb-3">Muscle Hut Gym</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">WellCare Valley has been my go-to place for all my health and wellness needs. Their extensive range of products and excellent delivery service have made them my trusted partner in maintaining a healthy lifestyle.</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Emily Parker</h4>
+                                <p class="m-0 pb-3">Dietician</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tastimonial End -->
+
+
+ <!-- Footer Start -->
+ <div class="container-fluid text-white-50 footer pt-5 mt-5" style="background-color: #304D2F;">
+    <div class="container py-5">
+        <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+            <div class="row g-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <a href="#">
+                        <h1 class="text-white mb-0">Wellcare Valley</h1>
+                        <p class="text-white-50 mb-0">COD Available</p>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-center justify-content-md-end pt-3">
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-twitter text-white"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-youtube text-white"></i></a>
+                        <a class="btn btn-outline-secondary btn-md-square rounded-circle" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Why People Like us!</h4>
+                    <p class="mb-4">Wellcare Valley delivers high-quality medicines directly to your doorstep, ensuring convenience and reliability. Experience hassle-free healthcare with us!</p>
+                    <a href="aboutus.html" class="btn border-secondary py-2 px-4 rounded-pill text-white">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-center text-md-start footer-item">
+                    <h4 class="text-light mb-3">Links</h4>
+                    <a class="btn-link" href="index.html">Home</a>
+                    <a class="btn-link" href="aboutus.html">About Us</a>
+                    <a class="btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn-link" href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-center text-md-start footer-item">
+                    <h4 class="text-light mb-3">Shop Info</h4>
+                    <a class="btn-link" href="shop.html">Shop details</a>
+                    <a class="btn-link" href="viewcart.html">Shopping Cart</a>
+                    <a class="btn-link" href="privacy-policy.html">Terms & Condition</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Contact</h4>
+                    <p>Address: 1429 Netus Rd, NY 48247</p>
+                    <p>Email: Example@gmail.com</p>
+                    <p>Phone: +0123 4567 8910</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-primary py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
+                    <i class="text-white me-2"></i>WellCare Valley</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    Designed By <a class="border-bottom text-white" href="#">Team SharpEdge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+   <!-- mobile footer -->
+   <footer class="fixed-bottom d-block d-sm-none text-white p-3" style="background-color: #fff;">
+    <div class="container-fluid">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-3 text-center">
+                <a href="index.html" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-home"></i> <!-- Home icon -->
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="tel:+917006417832" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="https://wa.me/+917006417832/?text=Hello%20WellcareValley." class="text-primary">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="viewcart.html" class="text-primary nav-item nav-link d-flex flex-column align-items-center justify-content-center ">
+                    <i class="fas fa-shopping-cart cartItemCount">0</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+      
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/addToCart.js"></script>
+    </body>
+
+</html>

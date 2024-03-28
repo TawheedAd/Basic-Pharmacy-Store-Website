@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WellCare Valley</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .nav-item.nav-link.active {
+            font-weight: bold;
+            color: #ff0000;
+            /* Change to your desired active link color */
+        }
+
+        /* Positioning the count number inside the cart icon */
+        .cart-count {
+            position: absolute;
+            top: -15px;
+            /* Adjust as needed */
+            right: 0px;
+            /* Adjust as needed */
+            font-size: 13px;
+            padding: 0px 6px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            /* Align pagination items in the center horizontally */
+            list-style: none;
+            /* Remove default list styles */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        .pagination-container {
+            margin-top: 20px;
+            /* Adjust margin-top as needed */
+        }
+
+
+/* Styles for custom select for mobile screens */
+.styled-select {
+    position: relative;
+    display: block;
+    margin-bottom: 20px; /* Add some space between elements */
+}
+
+.styled-select span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333; /* Adjust color as needed */
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    appearance: none; /* Remove default arrow in Firefox */
+}
+
+.select-wrapper::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+
+
+  /* Additional styles for larger screens */
+  @media (min-width: 576px) {
+    .fruite-categorie {
+      display: block !important;
+    }
+    
+    .styled-select {
+      display: none; /* Hide the styled select for larger screens */
+    }
+  }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white text-dark sticky-top">
+        <div class="container-fluid " style="background-color: #ffff;">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="your-logo.png" alt="Your Brand Logo" height="50"> -->
+                <h4 style=" margin-right: 90px; margin-top: 5px;" class=" ">Wellcare Valley</h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Store
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="shop.html">All Products</a></li>
+                            <li><a class="dropdown-item" href="#">Categories</a></li>
+                            <li><a class="dropdown-item" href="#">Brands</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+
+                    </li>
+                </ul>
+                <form class="d-flex pb-3 mt-3">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <a class="nav-link d-flex align-items-center ms-3 text-greeno d-none d-md-block" href="viewcart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge text-greeno rounded-pill cartItemCount">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Store</h1>
+
+    </div>
+    <!-- Single Page Header End -->
+
+
+    <!-- Options Catagories-->
+    <div class="container-fluid fruite py-5 ">
+        <div class="container py-5 ">
+            <h1 class="mb-4">Catagories</h1>
+            <div class="row g-4">
+                <div class="col-lg-12">
+
+                    <div class="row g-4">
+                        <!-- Options for big screen -->
+                        <div class="col-lg-3 bg-p shadow-sm fruite-categorie" style="display: none;">
+                            <div class="row g-4">
+                                <!-- ################tabs#####                                    -->
+                                <div class="col-lg-12 py-3">
+                                    <div class="mb-3">
+
+                                        <ul class="list-unstyled fruite-categorie">
+                                            <li>
+                                                <div class="d-flex justify-content-between fruite-name ">
+                                                    <a href="#tab-a" class="tab-link "><i
+                                                            class="fas fa-shopping-cart me-2"></i>Medicine</a>
+                                                    <span>(12)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex justify-content-between fruite-name">
+                                                    <a href="#tab-b" class="tab-link"><i
+                                                            class="fas fa-shopping-cart me-2"></i>Nutrition</a>
+                                                    <span>(11)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex justify-content-between fruite-name">
+                                                    <a href="#tab-c" class="tab-link" onclick="toggleSubOptions(event)">
+                                                        <i class="fas fa-shopping-cart me-2"></i>Sexual Wellness
+                                                    </a>
+                                                    <span>(9)</span>
+                                                </div>
+                                                <!-- Sub-options list -->
+                                                <ul class="sub-options-list">
+                                                    <li><a href="#tab-c" class="tab-link"
+                                                            onclick="displaySubcategory('Sexual Health Supplements')">Sexual
+                                                            Health Supplements</a></li>
+                                                    <li><a href="#tab-e" class="tab-link"
+                                                            onclick="displaySubcategory('Condoms')">Condoms</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex justify-content-between fruite-name">
+                                                    <a href="#tab-d" class="tab-link"><i
+                                                            class="fas fa-shopping-cart me-2"></i>Fitness</a>
+                                                    <span>(4)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex justify-content-between fruite-name">
+                                                    <a href="#tab-z" class="tab-link"><i
+                                                            class="fas fa-shopping-cart me-2"></i>more</a>
+                                                    <span>(5)</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Feature Products   
+                -->
+                                <div class="col-lg-12 d-none d-md-block">
+                                    <h4 class="mb-3">Featured products</h4>
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                            <img src="https://imgs.search.brave.com/2NDZfVti4ESywh2kgIjCsZg0iC-15mYvWousZBU08wk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzYzZTZh/ODI3ZGNhYjg2MWY3/YTQ3NDZjNy9tYXN0/ZXIvd18zMjAsY19s/aW1pdC9NYXNrcy1X/ZS1Mb3ZlLVNob3Vs/ZC1Zb3UtRG91Ymxl/LU1hc2stR2Vhci1H/ZXR0eUltYWdlcy0x/NDQxMTg0NDI1Lmpw/Zw"
+                                                class="img-fluid rounded" alt="">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Mask</h6>
+                                            <div class="d-flex mb-2">
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <h5 class="fw-bold me-2">80 ₹</h5>
+                                                <h5 class="text-danger text-decoration-line-through">30 ₹</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                            <img src="https://imgs.search.brave.com/2NDZfVti4ESywh2kgIjCsZg0iC-15mYvWousZBU08wk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzYzZTZh/ODI3ZGNhYjg2MWY3/YTQ3NDZjNy9tYXN0/ZXIvd18zMjAsY19s/aW1pdC9NYXNrcy1X/ZS1Mb3ZlLVNob3Vs/ZC1Zb3UtRG91Ymxl/LU1hc2stR2Vhci1H/ZXR0eUltYWdlcy0x/NDQxMTg0NDI1Lmpw/Zw"
+                                                class="img-fluid rounded" alt="">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Mask</h6>
+                                            <div class="d-flex mb-2">
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <h5 class="fw-bold me-2">80 ₹</h5>
+                                                <h5 class="text-danger text-decoration-line-through">30 ₹</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                            <img src="https://imgs.search.brave.com/2NDZfVti4ESywh2kgIjCsZg0iC-15mYvWousZBU08wk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzYzZTZh/ODI3ZGNhYjg2MWY3/YTQ3NDZjNy9tYXN0/ZXIvd18zMjAsY19s/aW1pdC9NYXNrcy1X/ZS1Mb3ZlLVNob3Vs/ZC1Zb3UtRG91Ymxl/LU1hc2stR2Vhci1H/ZXR0eUltYWdlcy0x/NDQxMTg0NDI1Lmpw/Zw"
+                                                class="img-fluid rounded" alt="">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-2">Mask</h6>
+                                            <div class="d-flex mb-2">
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star text-secondary"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="d-flex mb-2">
+                                                <h5 class="fw-bold me-2">80 ₹</h5>
+                                                <h5 class="text-danger text-decoration-line-through">30 ₹</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Banner                                    -->
+                                <div class="col-lg-12 d-md-block d-none">
+                                    <div class="position-relative">
+                                        <img src="img/fitness/tynor finger cot (large).jpg"
+                                            class="img-fluid w-100 rounded" alt="">
+                                        <div class="position-absolute"
+                                            style="top: 50%; right: 10px; transform: translateY(-50%);">
+                                            <h3 class="text-white bg-primary rounded fw-bold">New <br> fitness<br>
+                                                product</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- End Options for big screen -->
+
+                       <!-- Custom select for mobile screens -->
+                       <div class="styled-select">
+                        <span>Select a Category</span>
+                        <div class="select-wrapper">
+                            <select id="category-select" onchange="handleCategoryChange(event)">
+                                <option value="tab-a" selected>Medicine (12)</option>
+                                <option value="tab-b">Nutrition (11)</option>
+                                <optgroup label="Sexual Wellness">
+                                    <option value="tab-c">Health Supplements</option>
+                                    <option value="tab-e">Condoms</option>
+                               
+                                </optgroup>
+                                <option value="tab-d">Fitness (4)</option>
+                                <option value="tab-z">More (5)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                           <!-- End of Custom select for mobile screens -->
+
+
+
+
+                        <!-- Tab content for Tab A (Medicine) -->
+                        <div class="col-lg-9 tab-content" id="tab-a">
+                            <div class="row g-4 justify-content-center medicine-product-container">
+                                <!-- Product cards will be dynamically generated here -->
+                            </div>
+                            <!-- Pagination controls -->
+                            <div class="pagination-container mt-4 d-flex justify-content-center">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Pagination controls will be dynamically generated here -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab content for Tab B (Nutrition) -->
+                        <div class="col-lg-9 tab-content" id="tab-b" style="display: none;">
+                            <div class="row g-4 justify-content-center nutrition-product-container">
+                                <!-- Product cards will be dynamically generated here -->
+                            </div>
+                            <!-- Pagination controls -->
+                            <div class="pagination-container mt-4 d-flex justify-content-center">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Pagination controls will be dynamically generated here -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Tab content for Tab C (Sexual wellness) -->
+                        <div class="col-lg-9 tab-content" id="tab-c" style="display: none;">
+                            <div class="row g-4 justify-content-center sexual-wellness-product-container">
+                                <!-- Product cards will be dynamically generated here -->
+                            </div>
+                            <!-- Pagination controls -->
+                            <div class="pagination-container mt-4 d-flex justify-content-center">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Pagination controls will be dynamically generated here -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Tab content for Tab C (Sexual Wellness - Condoms) -->
+                        <div class="col-lg-9 tab-content" id="tab-e" style="display: none;">
+                            <div class="row g-4 justify-content-center sexual-wellness-condom-product-container">
+                                <!-- Product cards will be dynamically generated here -->
+                            </div>
+                            <!-- Pagination controls -->
+                            <div class="pagination-container mt-4 d-flex justify-content-center">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Pagination controls will be dynamically generated here -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab content for Tab D (Fitness) -->
+                        <div class="col-lg-9 tab-content" id="tab-d" style="display: none;">
+                            <div class="row g-4 justify-content-center fitness-product-container">
+                                <!-- Product cards will be dynamically generated here -->
+                            </div>
+                            <!-- Pagination controls -->
+                            <div class="pagination-container mt-4 d-flex justify-content-center">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Pagination controls will be dynamically generated here -->
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OPtions Shop End-->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-white-50 footer pt-5 mt-5" style="background-color: #304D2F;">
+        <div class="container py-5">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+                <div class="row g-4">
+                    <div class="col-md-6 text-center text-md-start">
+                        <a href="#">
+                            <h1 class="text-white mb-0">Wellcare Valley</h1>
+                            <p class="text-white-50 mb-0">COD Available</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-center justify-content-md-end pt-3">
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i
+                                    class="fab fa-twitter text-white"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i
+                                    class="fab fa-facebook-f text-white"></i></a>
+                            <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i
+                                    class="fab fa-youtube text-white"></i></a>
+                            <a class="btn btn-outline-secondary btn-md-square rounded-circle" href="#"><i
+                                    class="fab fa-linkedin-in text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Why People Like us!</h4>
+                        <p class="mb-4">Wellcare Valley delivers high-quality medicines directly to your doorstep,
+                            ensuring convenience and reliability. Experience hassle-free healthcare with us!</p>
+                        <a href="aboutus.html" class="btn border-secondary py-2 px-4 rounded-pill text-white">Read
+                            More</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-center text-md-start footer-item">
+                        <h4 class="text-light mb-3">Links</h4>
+                        <a class="btn-link" href="index.html">Home</a>
+                        <a class="btn-link" href="aboutus.html">About Us</a>
+                        <a class="btn-link" href="contact.html">Contact Us</a>
+                        <a class="btn-link" href="privacy-policy.html">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-column text-center text-md-start footer-item">
+                        <h4 class="text-light mb-3">Shop Info</h4>
+                        <a class="btn-link" href="shop.html">Shop details</a>
+                        <a class="btn-link" href="viewcart.html">Shopping Cart</a>
+                        <a class="btn-link" href="privacy-policy.html">Terms & Condition</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-item">
+                        <h4 class="text-light mb-3">Contact</h4>
+                        <p>Address: 1429 Netus Rd, NY 48247</p>
+                        <p>Email: Example@gmail.com</p>
+                        <p>Phone: +0123 4567 8910</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-primary py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
+                    <i class="text-white me-2"></i>WellCare Valley</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    Designed By <a class="border-bottom text-white" href="#">Team SharpEdge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+    <!-- Add a modal product-detail popup dialog -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="productDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile footer -->
+
+    <footer class="fixed-bottom d-block d-sm-none text-white p-3" style="background-color: #fff;">
+        <div class="container-fluid">
+            <div class="row justify-content-around align-items-center">
+                <div class="col-3 text-center">
+                    <a href="index.html"
+                        class="text-primary d-flex flex-column align-items-center justify-content-center">
+                        <i class="fas fa-home"></i> <!-- Home icon -->
+                    </a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="tel:+917006417832"
+                        class="text-primary d-flex flex-column align-items-center justify-content-center">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="https://wa.me/+917006417832/?text=Hello%20WellcareValley." class="text-primary">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="col-3 text-center">
+                    <a href="viewcart.html"
+                        class="text-primary nav-item nav-link d-flex flex-column align-items-center justify-content-center ">
+                        <i class="fas fa-shopping-cart cartItemCount">0</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/productDetailsPopup.js"></script>
+    <script src="js/medicineProduct.js"></script>
+    <script src="js/nutriationProducts.js"></script>
+    <script src="js/fitnessProducts.js"></script>
+    <script src="js/sexual-wellnessProduct.js"></script>
+    <script src="/js/sexual_wellness_condom_product.js"></script>
+    <!-- Add this script to handle tab switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all tab links
+            var tabLinks = document.querySelectorAll('.tab-link');
+
+            // Add click event listeners to each tab link
+            tabLinks.forEach(function (tabLink) {
+                tabLink.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Get the target tab content based on the href attribute
+                    var targetTabId = tabLink.getAttribute('href').substring(1);
+                    var targetTabContent = document.getElementById(targetTabId);
+
+                    // Hide all tab contents
+                    document.querySelectorAll('.tab-content').forEach(function (tabContent) {
+                        tabContent.style.display = 'none';
+                    });
+
+                    // Show the target tab content
+                    targetTabContent.style.display = 'block';
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // By default, display products for "Sexual Health Supplements"
+            displaySubcategory('Sexual Health Supplements');
+        });
+
+        function toggleSubOptions(event) {
+            event.preventDefault(); // Prevent the default behavior of the link
+            const subOptionsList = document.querySelector('.sub-options-list');
+            subOptionsList.style.display = (subOptionsList.style.display === 'none' ? 'block' : 'none');
+        }
+
+        function displaySubcategory(subcategory) {
+            // Code to display products and pagination for the selected subcategory
+
+            // Remove the 'active' class from all tab-links
+            const tabLinks = document.querySelectorAll('.sub-options-list .tab-link');
+            tabLinks.forEach(link => link.classList.remove('active'));
+
+            // Add the 'active' class to the clicked tab-link
+            event.target.classList.add('active');
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <!-- JavaScript -->
+
+    <!-- JavaScript -->
+    <!-- JavaScript -->
+<!-- JavaScript -->
+<script>
+    // Example JavaScript if you want to do something with the selected option
+    document.querySelectorAll('.sub-option').forEach(function (option) {
+        option.style.paddingLeft = '20px'; // Adjust padding to match indentation
+    });
+
+    document.querySelectorAll('.tab-link').forEach(function (tab) {
+        tab.style.display = 'block'; // Ensure all tabs are displayed
+    });
+
+    // Handle selection change
+    document.getElementById('category-select').addEventListener('change', function () {
+        var selectedOption = this.value;
+        console.log('Selected option:', selectedOption);
+        // Hide other tab contents and show the selected one
+        document.querySelectorAll('.tab-content').forEach(function (tabContent) {
+            tabContent.style.display = 'none';
+        });
+        document.getElementById(selectedOption).style.display = 'block';
+    });
+</script>
+
+
+
+
+
+</body>
+
+</html>

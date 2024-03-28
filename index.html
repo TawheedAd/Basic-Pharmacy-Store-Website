@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wellcare Valley</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+.containera {
+  overflow: hidden; /* Hides the overflow to prevent scrolling */
+  white-space: nowrap; /* Prevents wrapping of content */
+}
+
+.moving-paragraph {
+  animation: moveRightToLeft 30s linear infinite; /* Adjust the duration (10s) and timing function (linear) as needed */
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%); /* Start from 100% right */
+  }
+  100% {
+    transform: translateX(-100%); /* End at 100% left */
+  }
+}
+
+/* For desktop screens */
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#popup-content {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3c8c40;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#popup-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* For mobile screens */
+@media screen and (max-width: 767px) {
+    #popup-container {
+        height: 70%; /* Half the screen height */
+        top: 20%;
+    }
+
+    #popup-content {
+        width: 90%; /* Full width */
+        height: 90%; /* Full height */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+        border-radius: 0;
+    }
+
+    #close-popup {
+        top: 5px;
+        right: 5px;
+        font-size: 18px;
+    }
+}
+
+
+        /* Positioning the count number inside the cart icon */
+.cart-count {
+    position: absolute;
+    top: -15px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    font-size: 13px;
+    padding: 0px 6px;
+}
+
+
+
+    </style>
+</head>
+
+<body style="background-color: #fff">
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white text-dark sticky-top" >
+  <div class="container-fluid " style="background-color: #ffff;">
+    <a class="navbar-brand" href="#">
+      <!-- <img src="your-logo.png" alt="Your Brand Logo" height="50"> -->
+      <h4 style=" margin-right: 90px; margin-top: 5px;" class=" " >Wellcare Valley</h4>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Store
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="shop.html">All Products</a></li>
+            <li><a class="dropdown-item" href="#">Categories</a></li>
+            <li><a class="dropdown-item" href="#">Brands</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+          
+        </li>
+      </ul>
+      <form class="d-flex pb-3 mt-3">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <a class="nav-link d-flex align-items-center ms-3 text-greeno d-none d-md-block" href="viewcart.html">
+        <i class="fas fa-shopping-cart"></i>
+        <span  class="badge text-greeno rounded-pill cartItemCount" >0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+    <!-- Navbar End -->
+
+
+<!-- Hero Start -->
+<div class="container-fluid py-5  hero-header">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-10 col-lg-7 text-center text-lg-start">
+            <h1 class="mb-3 text-white">Your Gateway to Everyday Wellbeing</h1>
+            <h4 class="mb-4" style="color: #DA651D;">From Medicines to Nutrition, Wellcare Valley Cares for You</h4>
+            <p class="mb-4 text-white">Get all your health needs fulfilled with our wide range of products. Take a step towards a healthier lifestyle today!</p>
+            <a href="shop.html" class="btn bg-light btn-lg text-dark mb-3">Explore Now</a>
+        </div>
+        <div class="col-md-10 col-lg-5 text-center">
+            <img class="img-fluid d-none d-md-block" src="img/ui_revamp_searchBanner2.svg" alt="Wellcare Valley Image" style="width: 100%; height: auto;">
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+<!-- alert  message-->
+<div class="containera py-3">
+    <p class="moving-paragraph">Please read our terms and conditions before buying medicines from our website. It's important to understand the guidelines and agreements that govern the use of our services. By proceeding with a purchase, you acknowledge that you have read, understood, and agreed to our terms and conditions.</p>
+  </div>
+
+<!-- section-banner -->
+<section class="" style="width: 100%; display: flex; flex-wrap: wrap;">
+    <!-- Image Div -->
+    <div class="col-md-8">
+        <img src="img/home-dlvry.jpg" alt="" srcset="" style="width: 100%; max-height: 100%; height: auto;">
+    </div>
+    
+    <!-- Services Div -->
+    <div class="features-section col-md-4">
+        <div class="">
+            <h1 class="py-2" style="background-color: #005598; color: white; font-size: x-large; text-align: center;">
+                what we offer</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-12 mb-2">
+                    <div class="feature-item d-flex align-items-center rounded-lg px-4 py-3  border border-gray-300">
+                        <i class="fas fa-car-side fa-lg me-2 text-primary"></i>
+                        <h5 class="mb-0" style="font-size: 14px;">COD Available</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 mb-2">
+                    <div class="feature-item d-flex align-items-center rounded-lg px-4 py-3  border border-gray-300">
+                        <i class="fas fa-user-shield fa-lg me-2 text-warning"></i>
+                        <h5 class="mb-0" style="font-size: 14px;">Secure Payment</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 mb-2">
+                    <div class="feature-item d-flex align-items-center rounded-lg px-4 py-3 border border-gray-300">
+                        <i class="fas fa-exchange-alt fa-lg me-2 text-success"></i>
+                        <h5 class="mb-0" style="font-size: 14px;">Easy Returns</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-12 mb-2">
+                    <div class="feature-item d-flex align-items-center rounded-lg px-4 py-3 border border-gray-300">
+                        <i class="fas fa-headset fa-lg me-2 text-info"></i>
+                        <h5 class="mb-0" style="font-size: 14px;">24/7 Support</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!--  New Products-->
+
+        <div class="container fruite py-5 ">
+                        
+                            <div class="col-lg-12">
+                              
+                                <div class="row g-4">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <h1>New Products</h1>
+                                        <a href="index.html">View All &#8594</a>
+                                    </div>
+                                   
+                                    <!-- Item 1 -->
+                                    <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                                        <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                                            <div class="fruite-img">
+                                                <img src="img/medicine/limce.jpg" class="img-fluid rounded-top" alt="">
+                                            </div>
+                                            <div class="text-white bg-primary px-3 rounded tag position-absolute" style="top: 5px; left: 4px;">Medicines</div>
+                                            <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                                                <h6>Limcee - Strip of 15 Tablets</h6>
+                                            </div> 
+                                            <div style="display: flex; flex: 5px;">
+                                                <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹24.86</p> <!-- Update description here -->
+                                                <p class="p-1 "> ₹22.37</p> <!-- Update description here -->
+                                            </div>   
+                                          
+                                            <div class="d-flex justify-content-center  flex-lg-wrap bg-primary">
+                                                <button class="btn py-1 text-white" onclick="addToCart('Limcee - Strip of 15 Tablets', '24.86','22.37', 'img/medicine/limce.jpg')"> <!-- Corrected function call -->
+                                                    Add to cart
+                                                    <i class="fas fa-shopping-bag text-white"></i>
+
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Item 2 -->
+                                    <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                                        <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                                            <div class="fruite-img">
+                                                <img src="img/medicine/unienzyme.jpg" class="img-fluid rounded-top" alt="">
+                                            </div>
+                                            <div class="text-white bg-primary px-3 rounded tag position-absolute" style="top: 5px; left: 4px;">Medicines</div>
+                                            <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                                                <h6>Unienzyme - Strip of 15 Tablets</h6>
+                                            </div>    
+                                            <div style="display: flex; flex: 5px;">
+                                                <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹77.55</p> <!-- Update description here -->
+                                                <p class="p-1 "> ₹69.79</p> <!-- Update description here -->
+                                            </div> 
+                                            <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                                                <button class="btn py-1 text-white" onclick="addToCart('Unienzyme - Strip of 15 Tablets', '77.55','69.79', 'img/medicine/unienzyme.jpg', 'Composition: Each film coated tablet contains: Tocopheryl Acetate IP 200 mg, L-Carnitine-L-Tartarate equivalent to Levocarnitine USP 150 mg')"> <!-- Corrected function call -->
+                                                    Add to cart
+                                                    <i class="fa fa-shopping-bag text-white"></i> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Item 3 -->
+                                    <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                                        <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                                            <div class="fruite-img">
+                                                <img src="img/nutrition/bulk king.webp" class="img-fluid rounded-top" alt="">
+                                            </div>
+                                            <div class="text-white bg-primary px-3 rounded tag position-absolute" style="top: 5px; left: 4px;">Nutrition</div>
+                                            <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                                                <h6>Doctor's Choice Bulk King Strawberry & Banana (3kg)</h6>
+                                            </div>    
+                                            <div style="display: flex; flex: 5px;">
+                                                <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹4499</p> <!-- Update description here -->
+                                                <p class="p-1 "> ₹2600</p> <!-- Update description here -->
+                                            </div> 
+                                            <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                                                <button class="btn py-1 text-white" onclick="addToCart('Doctors Choice Bulk King Strawberry & Banana (3kg)', '4499','2600', 'img/nutrition/bulk king.webp', '')"> <!-- Corrected function call -->
+                                                    Add to cart
+                                                    <i class="fa fa-shopping-bag text-white"></i> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Item 4 -->
+                                    <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3">
+                                        <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                                            <div class="fruite-img">
+                                                <img src="img/sexual-med/Himalaya-confido.webp" class="img-fluid rounded-top" alt="">
+                                            </div>
+                                            <div class="text-white bg-primary px-3 rounded tag position-absolute" style="top: 5px; left: 4px;">Sexual Healthcare</div>
+                                            <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                                                <h6>Himalaya Confido Tablets (60tab)</h6>
+                                            </div>    
+                                            <div style="display: flex; flex: 5px;">
+                                                <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹190</p> <!-- Update description here -->
+                                                <p class="p-1 "> ₹180</p> <!-- Update description here -->
+                                            </div> 
+                                            <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                                                <button class="btn py-1 text-white" onclick="addToCart('Himalaya Confido Tablets (60tab)', '190','180', 'Himalaya Confido Tablets (60tab)', '')"> <!-- Corrected function call -->
+                                                    Add to cart
+                                                    <i class="fa fa-shopping-bag text-white"></i> 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+ 
+                          
+
+                                  
+                                   
+                                </div>
+                            </div>
+                    
+                   
+               
+            
+        
+    </div>
+
+
+    <!-- popular products-->
+
+    <div class="container fruite py-5 ">
+                        
+        <div class="col-lg-12">
+          
+            <div class="row g-4">
+                <div style="display: flex; justify-content: space-between;">
+                    <h1>Popular Products</h1>
+                    <a href="shop.html">View All &#8594</a>
+                </div>
+               
+                <!-- Item 1 -->
+                <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="fruite-img">
+                            <img src="img/nutrition/muscle mass.jpg" class="img-fluid rounded-top" alt="">
+                        </div>
+                        <div class="text-white bg-primary px-3 rounded position-absolute" style="top: 5px; left: 4px;">Nutrition</div>
+                        <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                            <h6>Labrada Muscle Mass Gainer Powder 6.6 lbs (Pack of 3 kg)</h6>
+                        </div>    
+                        <p class="p-1">Price ₹80</p> <!-- Update description here -->
+                        <div class="d-flex justify-content-center  flex-lg-wrap bg-primary">
+                            <button class="btn py-1 text-white" onclick="addToCart('Limcee - Strip of 15 Tablets', '₹80', 'img/medicine/limce.jpg')"> <!-- Corrected function call -->
+                                Add to cart
+                                <i class="fas fa-shopping-bag text-white"></i>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="fruite-img">
+                            <img src="img/medicine/Tretinoin-gel.jpg" class="img-fluid rounded-top" alt="">
+                        </div>
+                        <div class="text-white bg-primary px-3 rounded position-absolute" style="top: 5px; left: 4px;">Medicines</div>
+                        <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                            <h6>A-RET GEL 0.025% - Tube of 20 gm Gel</h6>
+                        </div>    
+                        <div style="display: flex; flex: 5px;">
+                            <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹120</p> <!-- Update description here -->
+                            <p class="p-1 "> ₹108</p> <!-- Update description here -->
+                        </div> 
+                        <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                            <button class="btn py-1 text-white" onclick="addToCart('Unienzyme - Strip of 15 Tablets', '120','108', 'img/medicine/unienzyme.jpg', 'Composition: Each film coated tablet contains: Tocopheryl Acetate IP 200 mg, L-Carnitine-L-Tartarate equivalent to Levocarnitine USP 150 mg')"> <!-- Corrected function call -->
+                                Add to cart
+                                <i class="fa fa-shopping-bag text-white"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="fruite-img">
+                            <img src="img/fitness/cotton-crepe-bandage.webp" class="img-fluid rounded-top" alt="">
+                        </div>
+                        <div class="text-white bg-primary px-3 rounded position-absolute" style="top: 5px; left: 4px;">Fitness</div>
+                        <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                            <h6>Leeford Cotton Crepe Bandage</h6>
+                        </div>    
+                        <div style="display: flex; flex: 5px;">
+                            <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹170</p> <!-- Update description here -->
+                            <p class="p-1 "> ₹140</p> <!-- Update description here -->
+                        </div> 
+                        <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                            <button class="btn py-1 text-white" onclick="addToCart('Doctors Choice Bulk King Strawberry & Banana (3kg)', '170','140', 'img/nutrition/bulk king.webp', '')"> <!-- Corrected function call -->
+                                Add to cart
+                                <i class="fa fa-shopping-bag text-white"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="col-6 col-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="rounded position-relative fruite-item bg-white " style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="fruite-img">
+                            <img src="img/sexual-med/Himalaya-confido.webp" class="img-fluid rounded-top" alt="">
+                        </div>
+                        <div class="text-white bg-primary px-3 rounded position-absolute" style="top: 5px; left: 4px;">Sexual Healthcare</div>
+                        <div class="p-1" style="height: 7vh; margin-top: 5vh;">
+                            <h6>Himalaya Confido Tablets (60tab)</h6>
+                        </div>    
+                        <div style="display: flex; flex: 5px;">
+                            <p class="p-1 text-danger text-decoration-line-through">Mrp - ₹190</p> <!-- Update description here -->
+                            <p class="p-1 "> ₹180</p> <!-- Update description here -->
+                        </div> 
+                        <div class="d-flex justify-content-center flex-lg-wrap bg-primary">
+                            <button class="btn py-1 text-white" onclick="addToCart('Himalaya Confido Tablets (60tab)', '190','180', 'Himalaya Confido Tablets (60tab)', '')"> <!-- Corrected function call -->
+                                Add to cart
+                                <i class="fa fa-shopping-bag text-white"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+      
+
+              
+               
+            </div>
+        </div>
+
+
+
+
+
+</div>
+
+
+  <!-- Banner Section Start-->
+  <div class="container-fluid banner bg-light  py-5">
+    <div class="container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="py-4">
+                    <h1 class="mb-3"> Medicines </h1>
+                    <p class="fw-normal text-dark mb-4">Delivered in Baramulla</p>
+                    <p class="mb-4 text-dark">Get your medicines  delivered to your doorstep for the first time in Baramulla. Cash on delivery available.</p>
+                    <div class="d-grid gap-2 d-lg-flex justify-content-lg-start">
+                        <div>
+                            <a href="contact.html" class="btn btn-primary btn-lg rounded-pill text-white">Place An Order Now &#8594;</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="py-4">
+                    <div class="d-flex justify-content-center">
+                        <img src="img/Green Medicine Logo.png" class="d-none d-md-block" alt="" style="max-width: 50%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Banner Section End -->
+
+
+    <!-- Bestsaler Product Start -->
+    <div class="container-fluid py-5">
+        <div class="container ">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h1 class="display-4">Bestseller Products</h1>
+               
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="img/paid.jpg"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">Stayfree Maxi Pads for Women</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="mb-3">₹97</h4>
+                                <button class="btn btn-sm border border-secondary rounded-pill text-primary px-3" onclick="addToCart('Stayfree Maxi Pads for Women', '120','97', 'img/paid.jpg')">
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="img/medicine/evion.jpg"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">Evion LC- Strip of 10 Tablets</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="mb-3">₹22.37</h4>
+                                <button class="btn btn-sm border border-secondary rounded-pill px-3 text-primary" onclick="addToCart('Evion LC- Strip of 10 Tablets', '56.90','22.37', 'img/medicine/evion.jpg')"><i
+                                    class="fa fa-shopping-bag me-2 text-primary "></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="img/sexual-med/wellman.webp"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">Asitis Atom Powder...</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="mb-3">₹350</h4>
+                                <button class="btn btn-sm border border-secondary rounded-pill px-3 text-primary" onclick="addToCart('Wellman Health Supplement for Men ', '438','350', 'img/sexual-med/wellman.webp')"><i
+                                    class="fa fa-shopping-bag me-2 text-primary "></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="img/nutrition/hkvitals.webp"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">HealthKart HK Vitals Skin Radiance Collagen Powder</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h6 style="font-size: smaller;" class="mb-3">₹1399</h6>
+                                <button class="btn border btn-sm border-secondary rounded-pill px-3 text-primary" onclick="addToCart('HealthKart HK Vitals Skin Radiance Collagen Powder','1999', '1399', 'img/nutrition/hkvitals.webp')"><i
+                                    class="fa fa-shopping-bag me-2 text-primary "></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="img/experthy.jpg"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">VWash Plus Expert Intimate Hygiene</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h6 class="mb-3 " style="font-size: smaller;">₹180 (₹180 /100 ml)</h6>
+                                <button class="btn btn-sm border border-secondary rounded-pill px-3 text-primary" onclick="addToCart('VWash Plus Expert Intimate Hygiene', '200','180', 'img/experthy.jpg')"><i
+                                    class="fa fa-shopping-bag me-2 text-primary "></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="https://imgs.search.brave.com/ZqTTruM0nuXedEcilNdrlVJ3GswZVoAXRqF89EdsZB4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvZTBi/NTBmZTctNWFhZC00/OTU0LWJmMjItMzI4/YTE4YmU4M2EyLjhj/MTNjMmE4NmYxNWE4/NjZjMGY2ZTAyNDIz/YzYzZDhkLmpwZWc_/b2RuSGVpZ2h0PTc4/NCZvZG5XaWR0aD01/ODAmb2RuQmc9RkZG/RkZG"
+                                    class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h6">out of stock</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="mb-3">₹1999</h4>
+                                <button class="btn btn-sm border border-secondary rounded-pill px-3 text-primary" onclick="addToCart('Stayfree Maxi Pads for Women', '180', 'img/paid.jpg')"><i
+                                    class="fa fa-shopping-bag me-2 text-primary "></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Bestsaler Product End -->
+
+
+  
+
+    <!-- Tastimonial Start -->
+    <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+            <div class="testimonial-header text-center py-4">
+                <h4 class="text-primary ">Our Testimonial</h4>
+                <h1 class="display-5 mb-5 text-dark">Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">I've been using WellCare Valley's services for a while now, and I must say, I'm impressed with their prompt delivery and quality products. They've made it so convenient for me to get my medications without any hassle.</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Tawheed Ad</h4>
+                                <p class="m-0 pb-3">Software Engineer</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">I can't thank WellCare Valley enough for their exceptional service. As a busy professional, having my medications delivered to my doorstep has been a lifesaver. Plus, their customer support is top-notch!</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Prince Dar</h4>
+                                <p class="m-0 pb-3">Muscle Hut Gym</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    <div class="position-relative">
+                        <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                            style="bottom: 30px; right: 0;"></i>
+                        <div class="mb-4 pb-4 border-bottom border-secondary">
+                            <p class="mb-0">WellCare Valley has been my go-to place for all my health and wellness needs. Their extensive range of products and excellent delivery service have made them my trusted partner in maintaining a healthy lifestyle.</p>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <div class=" rounded">
+                                <img src="img/testimonial-1.png" class="img-fluid rounded"
+                                    style="width: 100px; height: 100px;" alt="">
+                            </div>
+                            <div class="ms-4 d-block">
+                                <h4 class="text-dark">Emily Parker</h4>
+                                <p class="m-0 pb-3">Dietician</p>
+                                <div class="d-flex pe-5">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tastimonial End -->
+
+
+ <!-- Footer Start -->
+<div class="container-fluid text-white-50 footer pt-5 mt-5" style="background-color: #304D2F;">
+    <div class="container py-5">
+        <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+            <div class="row g-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <a href="#">
+                        <h1 class="text-white mb-0">Wellcare Valley</h1>
+                        <p class="text-white-50 mb-0">COD Available</p>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-center justify-content-md-end pt-3">
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-twitter text-white"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-youtube text-white"></i></a>
+                        <a class="btn btn-outline-secondary btn-md-square rounded-circle" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Why People Like us!</h4>
+                    <p class="mb-4">Wellcare Valley delivers high-quality medicines directly to your doorstep, ensuring convenience and reliability. Experience hassle-free healthcare with us!</p>
+                    <a href="aboutus.html" class="btn border-secondary py-2 px-4 rounded-pill text-white">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-center text-md-start footer-item">
+                    <h4 class="text-light mb-3">Links</h4>
+                    <a class="btn-link" href="index.html">Home</a>
+                    <a class="btn-link" href="aboutus.html">About Us</a>
+                    <a class="btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn-link" href="privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="d-flex flex-column text-center text-md-start footer-item">
+                    <h4 class="text-light mb-3">Shop Info</h4>
+                    <a class="btn-link" href="shop.html">Shop details</a>
+                    <a class="btn-link" href="viewcart.html">Shopping Cart</a>
+                    <a class="btn-link" href="privacy-policy.html">Terms & Condition</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="text-light mb-3">Contact</h4>
+                    <p>Address: 1429 Netus Rd, NY 48247</p>
+                    <p>Email: Example@gmail.com</p>
+                    <p>Phone: +0123 4567 8910</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-primary py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
+                    <i class="text-white me-2"></i>WellCare Valley</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    Designed By <a class="border-bottom text-white" href="#">Team SharpEdge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn bg-white border-3 border-primary rounded-circle back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+  
+
+    <!-- Add a modal dialog -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="productDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Popup AD -->
+    <div id="popup-container">
+        <div id="popup-content">
+            <img src="img/ad2.png" alt="Popup Image">
+            <h3 class="text-white">Welcome to WellcareValley!</h3>
+        <p class="text-white">First time in Baramulla: Home delivery of medicines and more.</p>
+            <span class="text-white display-5" id="close-popup">&times;</span>
+        </div>
+    </div>
+   
+
+   <!-- mobile footer -->
+<footer class="fixed-bottom d-block d-sm-none text-white p-3" style="background-color: #fff;">
+    <div class="container-fluid">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-3 text-center">
+                <a href="index.html" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-home"></i> <!-- Home icon -->
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="tel:+91700000000" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="https://wa.me/+9170000000/?text=Hello%20WellcareValley." class="text-primary">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="viewcart.html" class="text-primary nav-item nav-link d-flex flex-column align-items-center justify-content-center ">
+                    <i class="fas fa-shopping-cart cartItemCount">0</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+    <!-- popup script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("popup-container").style.display = "block";
+    }, 3000);
+
+    document.getElementById("close-popup").addEventListener("click", function() {
+        document.getElementById("popup-container").style.display = "none";
+    });
+});
+
+    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/productDetailsPopup.js"></script>
+    
+</body>
+
+</html>

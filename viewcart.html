@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WellCare Valley</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        
+        /* Positioning the count number inside the cart icon */
+.cart-count {
+    position: absolute;
+    top: -15px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    font-size: 13px;
+    padding: 0px 6px;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%; /* Increase the width */
+  max-width: 400px; /* Add a max-width to maintain readability */
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #555;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Ensure the form rows wrap properly */
+  justify-content: space-between;
+  margin-bottom: 10px; /* Add some space between form rows */
+}
+
+.form-group {
+  flex-basis: calc(50% - 10px);
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+input[type="file"] {
+  font-size: 11px;
+  margin-top: 5px;
+  margin-left: 15px;
+  display: block;
+  width: 100%; /* Ensure the file input spans the full width */
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white text-dark sticky-top" >
+      <div class="container-fluid " style="background-color: #ffff;">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="your-logo.png" alt="Your Brand Logo" height="50"> -->
+          <h4 style=" margin-right: 90px; margin-top: 5px;" class=" " >Wellcare Valley</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Store
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="shop.html">All Products</a></li>
+                <li><a class="dropdown-item" href="#">Categories</a></li>
+                <li><a class="dropdown-item" href="#">Brands</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+              
+            </li>
+          </ul>
+          <form class="d-flex pb-3 mt-3">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <a class="nav-link d-flex align-items-center ms-3 text-greeno d-none d-md-block" href="viewcart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span  class="badge text-greeno rounded-pill cartItemCount" >0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+        <!-- Navbar End -->
+    
+
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+      <h1 class="text-center text-white display-6">Cart</h1>
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item active text-white">Cart</li>
+      </ol>
+    </div>
+    <!-- Single Page Header End -->
+
+    <!-- Main Section -->
+    <div class="container main-section" style="margin-top: 16vh">
+      <h1>Shopping Cart</h1>
+      <div id="cartItems"></div>
+    </div>
+   <!-- HTML structure for the popup form -->
+   <div id="popupForm" class="popup">
+    <form class="popup-content" action="mail.php" method="post" enctype="multipart/form-data">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Order Form</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="itemName">Item Name:</label>
+          <input type="text" id="itemName" name="itemName" readonly />
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" readonly />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="units">Units:</label>
+          <input type="number" id="units" name="units"  value="1" onchange="calculatePrice()"  />
+        </div>
+        <div class="form-group">
+          <label for="totalPrice">Total Price:</label>
+          <input type="text" id="totalPrice" name="totalPrice" readonly />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required /> 
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" required />
+      </div>
+      
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" required></textarea>
+        </div>
+        <div class="form-group" style="margin-top: 22px;">
+          <label for="prescription" class="file-label" style="font-size: xx-small;">Prescription by Doctor (Optional):
+            <input type="file" id="prescription" name="prescription" />
+        </label>
+        
+        </div>
+      </div>
+      
+    
+      <div class="form-row" style="margin-top: 10px;">
+        <button type="submit">Place Order</button>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+
+ 
+
+ <!-- Footer Start -->
+ <div class="container-fluid text-white-50 footer pt-5 mt-5" style="background-color: #304D2F;">
+  <div class="container py-5">
+      <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5);">
+          <div class="row g-4">
+              <div class="col-md-6 text-center text-md-start">
+                  <a href="#">
+                      <h1 class="text-white mb-0">Wellcare Valley</h1>
+                      <p class="text-white-50 mb-0">COD Available</p>
+                  </a>
+              </div>
+              <div class="col-md-6">
+                  <div class="d-flex justify-content-center justify-content-md-end pt-3">
+                      <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-twitter text-white"></i></a>
+                      <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                      <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href="#"><i class="fab fa-youtube text-white"></i></a>
+                      <a class="btn btn-outline-secondary btn-md-square rounded-circle" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item">
+                  <h4 class="text-light mb-3">Why People Like us!</h4>
+                  <p class="mb-4">Wellcare Valley delivers high-quality medicines directly to your doorstep, ensuring convenience and reliability. Experience hassle-free healthcare with us!</p>
+                  <a href="aboutus.html" class="btn border-secondary py-2 px-4 rounded-pill text-white">Read More</a>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <div class="d-flex flex-column text-center text-md-start footer-item">
+                  <h4 class="text-light mb-3">Links</h4>
+                  <a class="btn-link" href="index.html">Home</a>
+                  <a class="btn-link" href="aboutus.html">About Us</a>
+                  <a class="btn-link" href="contact.html">Contact Us</a>
+                  <a class="btn-link" href="privacy-policy.html">Privacy Policy</a>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <div class="d-flex flex-column text-center text-md-start footer-item">
+                  <h4 class="text-light mb-3">Shop Info</h4>
+                  <a class="btn-link" href="shop.html">Shop details</a>
+                  <a class="btn-link" href="viewcart.html">Shopping Cart</a>
+                  <a class="btn-link" href="privacy-policy.html">Terms & Condition</a>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item">
+                  <h4 class="text-light mb-3">Contact</h4>
+                  <p>Address: 1429 Netus Rd, NY 48247</p>
+                  <p>Email: Example@gmail.com</p>
+                  <p>Phone: +0123 4567 8910</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright bg-primary py-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white">
+                  <i class="text-white me-2"></i>WellCare Valley</a>, All right reserved.</span>
+              </div>
+              <div class="col-md-6 my-auto text-center text-md-end text-white">
+                  Designed By <a class="border-bottom text-white" href="#">Team SharpEdge</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Copyright End -->
+
+
+
+   <!-- form popup -->
+   <script>
+   function openForm(itemName, discount) {
+  document.getElementById("itemName").value = itemName;
+  document.getElementById("price").value = discount;
+  calculatePrice(); // Call calculatePrice() after setting itemName and price
+  document.getElementById("popupForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("popupForm").style.display = "none";
+}
+
+// Function to calculate price based on units
+function calculatePrice() {
+  var units = parseInt(document.getElementById("units").value);
+  
+  // Ensure units is always positive and at least 1
+  if (units < 1) {
+    units = 1;
+    document.getElementById("units").value = units;
+  }
+  
+  var price = parseFloat(document.getElementById("price").value);
+  var totalPrice = units * price;
+  document.getElementById("totalPrice").value = totalPrice.toFixed(2);
+}
+
+  </script>
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-primary border-3 border-primary rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+   <!-- mobile footer -->
+   <footer class="fixed-bottom d-block d-sm-none text-white p-3" style="background-color: #fff;">
+    <div class="container-fluid">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-3 text-center">
+                <a href="index.html" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-home"></i> <!-- Home icon -->
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="tel:+917006417832" class="text-primary d-flex flex-column align-items-center justify-content-center">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="https://wa.me/+917006417832/?text=Hello%20WellcareValley." class="text-primary">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="col-3 text-center">
+                <a href="viewcart.html" class="text-primary nav-item nav-link d-flex flex-column align-items-center justify-content-center ">
+                    <i class="fas fa-shopping-cart cartItemCount">0</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/addToCart.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/displayCart.js"></script>
+  </body>
+</html>
